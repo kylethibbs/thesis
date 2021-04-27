@@ -1,3 +1,6 @@
+
+function discrim
+
 myFig = figure;
 grid on;
 hold on
@@ -38,5 +41,8 @@ text(-1,-1,'\Delta = 0')
 text(1,1,'\Delta = 0')
 text(-1,-4,'\Delta < 0')
 text(1,4,'\Delta < 0')
+
+
+end
 
  

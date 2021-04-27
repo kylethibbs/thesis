@@ -43,6 +43,3 @@ function diplayGraph(handles, coef)
 
 end
 
-
-
-
