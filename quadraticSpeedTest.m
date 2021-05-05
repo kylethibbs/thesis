@@ -48,7 +48,7 @@ function quadraticSpeedTest
         qdsTic = tic;
         
         %Calculates the roots for Symbolic
-        qdsroot = quadraticSymbolic([coef{i,1}*i, coef{i,2}*i,coef{i,3}*i]);
+        qdsroot = quadraticSymbolic([coef{i,1}, coef{i,2},coef{i,3}]);
         
         %Stops the timer for symbolic
         qdsTime = toc(qdsTic);
@@ -61,7 +61,7 @@ function quadraticSpeedTest
         qdTic = tic;
         
         %Finds the roots for cardanos
-        qdroot = quadratic([coef{i,1}*i, coef{i,2}*i,coef{i,3}*i]);
+        qdroot = quadratic([coef{i,1}, coef{i,2},coef{i,3}]);
         
         %Stops the timer for cardanos
         qdTime = toc(qdTic); 
@@ -74,7 +74,7 @@ function quadraticSpeedTest
         rtTic = tic;
         
         %Find the roots with companion matrix
-        rtroot = roots([coef{i,1}*i, coef{i,2}*i,coef{i,3}*i]);
+        rtroot = roots([coef{i,1}, coef{i,2},coef{i,3}]);
         
         %Stops the timer for the companion matrix
         rtTime = toc(rtTic);
@@ -115,7 +115,7 @@ function quadraticSpeedTest
     
     %Writing the cell array into the excel document where the data was
     %taken from
-    writecell(cellArray,[filepath filename],'Sheet','timesImaginary','Range','A2');
+    writecell(cellArray,[filepath filename],'Sheet','times','Range','A2');
     
     %Assigning the data into the base workspace to work with it to make
     %graphs
@@ -128,7 +128,7 @@ function quadraticSpeedTest
     qdsdata = data(:,6);
     
     %Making the histogram
-    subplotfig = figure('Name','Time Distribution of Root Finding Functions Quadratic with Complex Coefficients',...
+    subplotfig = figure('Name','Time Distribution of Root Finding Functions Quadratic',...
                                 'Tag','histFig',...
                                 'NumberTitle','off',...
                                 'Units','normalized',...
